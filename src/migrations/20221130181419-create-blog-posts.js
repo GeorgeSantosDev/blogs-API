@@ -19,7 +19,7 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         field: 'user_id',
@@ -30,11 +30,11 @@ module.exports = {
       },
       published: {
         allowNull: false,
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
       },
       updated: {
         allowNull: false,
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
       },
     });
   },
