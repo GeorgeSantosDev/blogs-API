@@ -4,6 +4,7 @@ const validateDisplayName = require('./validateDisplayName');
 const validateEmail = require('./validateEmail');
 const validatePassword = require('./validatePassword');
 const validateIfUserAlreadyRegistered = require('./validateIfUserAlreadyRegistered');
+const validateCategoryName = require('./validateCategoryNameField');
 
 module.exports = {
   validateLoginFields,
@@ -12,4 +13,5 @@ module.exports = {
   validateEmail,
   validatePassword,
   validateIfUserAlreadyRegistered,
+  validateCategoryName,
 };
