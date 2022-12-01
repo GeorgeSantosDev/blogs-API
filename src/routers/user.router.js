@@ -1,5 +1,6 @@
 const express = require('express');
 const { userController } = require('../controllers/index');
+const { verifyToken } = require('../auth/JWT');
 const { validateDisplayName,
   validateEmail,
   validatePassword,
@@ -7,6 +8,7 @@ const { validateDisplayName,
 
 const router = express.Router();
 
+router.get('/', verifyToken, userController.findAllUsers);
 router.post('/',
   validateDisplayName,
   validateEmail,
