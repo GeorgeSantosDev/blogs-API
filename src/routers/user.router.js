@@ -9,6 +9,7 @@ const { validateDisplayName,
 const router = express.Router();
 
 router.get('/', verifyToken, userController.findAllUsers);
+router.get('/:id', verifyToken, userController.findUserById);
 router.post('/',
   validateDisplayName,
   validateEmail,
