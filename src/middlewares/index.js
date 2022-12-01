@@ -7,6 +7,7 @@ const validateIfUserAlreadyRegistered = require('./validateIfUserAlreadyRegister
 const validateCategoryName = require('./validateCategoryNameField');
 const validateIfPostExist = require('./validadeIfBlogPostExist');
 const validatePostFields = require('./validateCreatePostFields');
+const validateCategoriesField = require('./validateCategoriesField');
 
 module.exports = {
   validateLoginFields,
@@ -18,4 +19,5 @@ module.exports = {
   validateCategoryName,
   validateIfPostExist,
   validatePostFields,
+  validateCategoriesField,
 };
