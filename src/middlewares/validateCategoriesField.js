@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
 
   const checkCategories = await Promise.all(promises);
 
-  if (!checkCategories) {
+  if (checkCategories.includes(null)) {
     return res.status(400).json({ message: 'one or more "categoryIds" not found' });
   }
 
