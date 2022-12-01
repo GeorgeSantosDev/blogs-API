@@ -20,7 +20,21 @@ const getPostById = async (req, res) => {
   }
 };
 
+const createPost = async (req, res) => {
+  try {
+    const { title, content, categoryIds } = req.body;
+    const { id } = req.user;
+
+    const post = await postService.createPost(title, content, categoryIds, id);
+
+    res.status(201).json(post);
+  } catch (err) {
+    return res.status(500).json({ message: `Internal error: ${err}` });
+  }
+};
+
 module.exports = {
   getAllPosts,
   getPostById,
+  createPost,
 };
