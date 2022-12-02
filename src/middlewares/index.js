@@ -9,6 +9,7 @@ const validateIfPostExist = require('./validadeIfBlogPostExist');
 const validatePostFields = require('./validateCreatePostFields');
 const validateCategoriesField = require('./validateCategoriesField');
 const validateUserPermitionToChangePost = require('./validateUserPermitionToChangePost');
+const validateChangePostFields = require('./validateChangePostFields');
 
 module.exports = {
   validateLoginFields,
@@ -22,4 +23,5 @@ module.exports = {
   validatePostFields,
   validateCategoriesField,
   validateUserPermitionToChangePost,
+  validateChangePostFields,
 };
