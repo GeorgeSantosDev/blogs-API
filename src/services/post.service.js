@@ -35,8 +35,22 @@ const createPost = async (...info) => {
   if (checkPostCategoryInsert) return post;
 };
 
+const editPost = async (...info) => {
+  const [title, content, id] = info;
+  const date = new Date();
+
+  const editedPost = await BlogPost.update({ title, content, updated: date }, {
+    where: {
+      id,
+    },
+  });
+
+  return { edited: editedPost[0], date };
+};
+
 module.exports = {
   getAllPosts,
   getPostById,
   createPost,
+  editPost,
 };
