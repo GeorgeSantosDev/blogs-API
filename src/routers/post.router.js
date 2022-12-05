@@ -12,6 +12,7 @@ const { validateIfPostExist,
 const router = express.Router();
 
 router.get('/', verifyToken, postController.getAllPosts);
+router.get('/search', verifyToken, postController.searchPost);
 router.get('/:id', verifyToken, validateIfPostExist, postController.getPostById);
 
 router.post('/',
