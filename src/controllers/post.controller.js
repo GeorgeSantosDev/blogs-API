@@ -63,10 +63,30 @@ const deletePost = async (req, res) => {
   }
 };
 
+const searchPost = async (req, res) => {
+  try {
+    const { q } = req.query;
+
+    if (!q) {
+      const allPosts = await postService.getAllPosts();
+      return res.status(200).json(allPosts);
+    }
+
+    const searchedPost = await postService.searchPost(q);
+
+    if (searchedPost.length === 0) return res.status(200).json(searchedPost);
+
+    return res.status(200).json(searchedPost);
+  } catch (err) {
+    return res.status(500).json({ message: `Internal error: ${err}` });
+  }
+};
+
 module.exports = {
   getAllPosts,
   getPostById,
   createPost,
   editPost,
   deletePost,
+  searchPost,
 };
