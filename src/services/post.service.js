@@ -48,9 +48,16 @@ const editPost = async (...info) => {
   return { edited: editedPost[0], date };
 };
 
+const checkUserIdFromPost = async (postId, userId) => {
+  const post = await BlogPost.findByPk(postId, { where: { userId } });
+
+  return post;
+};
+
 module.exports = {
   getAllPosts,
   getPostById,
   createPost,
   editPost,
+  checkUserIdFromPost,
 };
