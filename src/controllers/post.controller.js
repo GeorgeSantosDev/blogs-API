@@ -52,9 +52,21 @@ const editPost = async (req, res) => {
   }
 };
 
+const deletePost = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const postDeleted = await postService.deletePost(id);
+
+    if (postDeleted) return res.status(204).json();
+  } catch (err) {
+    return res.status(500).json({ message: `Internal error: ${err}` });
+  }
+};
+
 module.exports = {
   getAllPosts,
   getPostById,
   createPost,
   editPost,
+  deletePost,
 };
