@@ -49,7 +49,13 @@ const editPost = async (...info) => {
 };
 
 const checkUserIdFromPost = async (postId, userId) => {
-  const post = await BlogPost.findByPk(postId, { where: { userId } });
+  const post = await BlogPost.findOne({ where: { userId, id: postId } });
+
+  return post;
+};
+
+const deletePost = async (postId) => {
+  const post = await BlogPost.destroy({ where: { id: postId } });
 
   return post;
 };
@@ -60,4 +66,5 @@ module.exports = {
   createPost,
   editPost,
   checkUserIdFromPost,
+  deletePost,
 };
