@@ -5,7 +5,9 @@ const { validateIfPostExist,
   validatePostFields,
   validateCategoriesField,
   validateUserPermitionToChangePost,
-  validateChangePostFields } = require('../middlewares/index');
+  validateChangePostFields,
+  validateIfBlogPostExist,
+  validateIfUserHaveAuthToDeletePost } = require('../middlewares/index');
  
 const router = express.Router();
 
@@ -23,5 +25,11 @@ router.put('/:id',
   validateUserPermitionToChangePost,
   validateChangePostFields,
   postController.editPost);
+
+router.delete('/:id',
+  verifyToken,
+  validateIfBlogPostExist,
+  validateIfUserHaveAuthToDeletePost,
+  postController.deletePost);
 
 module.exports = router;
