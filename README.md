@@ -350,3 +350,38 @@
 
 <br />
 
+<h2>
+  How try the application?
+</h2>
+
+<p>
+  Using docker (version 1.29 > is required): </br></br>
+   1. First run in your terminal <code>docker-compose up -d</code> to up containers. </br>
+   2. Then use the command <code>docker exec -it blogs_api bash</code> to acess the container terminal. </br>
+   3. After it use  <code>npm install</code> to install all dependences. </br>
+   4. Run <code>npx sequelize-cli db:create && npx sequelize-cli db:migrate</code> on container terminal to create db and tables.</br>
+   5. Run <code>npm run seed</code> on container terminal to populate the db.</br>
+   6. Run <code>npm start</code> on container terminal to start the application.</br>
+   7. If you don´t have any client extension to do the requestions download <code>Thunder Client</code> extension on VS Code.</br>
+   8. Select the method on thunder client.</br>
+   9. Do requisitions on thunder client using the URL shape http://localhost:3000/endpoint.
+</p>
+<p>
+  Make sure that all containers are up and the ports 3000, 3006 and 33060 of your computer are available
+<p/>
+
+
+<br />
+<br /> 
+
+<p> Any questions or suggestions? Contact me </p>
+
+<a href="https://www.linkedin.com/in/george-santos-dev" rel="nofollow">
+  <img
+    height="50px"
+    width="50px"
+    src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/linkedin/linkedin-original.svg"
+    alt="LinkedIn"
+  />   
+</a>
+
