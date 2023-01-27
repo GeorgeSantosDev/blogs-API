@@ -7,9 +7,9 @@
   The project was developed in a docker environment.
 
   The user is able to: 
-  - Create, read, update and delete posts;
-  - Create and read categories;
-  - Create, read, delete and login users
+  - create, read, update and delete posts;
+  - create and read categories;
+  - create, read, delete and login users
 
 </p>
 
@@ -47,8 +47,8 @@
 <img src="./images/createUserReturn.png"/>
 
 <p> Status: 400 </p>
-<p>- Some required fields are missing</p>
-<p>- Invalid fields</p>
+<p>- { message: "Some required fields are missing" }</p>
+<p>- { message: "Invalid fields" }</p>
 
 <br />
 <br />
@@ -74,12 +74,12 @@
 <img src="./images/createUserReturn.png"/>
 
 <p> Status: 400 </p>
-<p>- DisplayName length must be at least 8 characters long</p>
-<p>- Email must be a valid email</p>
-<p>- Password length must be at least 6 characters long</p>
+<p>- { message: "DisplayName length must be at least 8 characters long" }</p>
+<p>- { message: "Email must be a valid email" }</p>
+<p>- { message: "Password length must be at least 6 characters long" }</p>
 
 <p> Status: 409 </p>
-<p> - User already registered</p>
+<p>- { message: "User already registered" }</p>
 
 <br />
 
@@ -101,8 +101,8 @@
 <img src="./images/getUserReturn.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <br />
 
@@ -122,11 +122,11 @@
 <img src="./images/getUserByIdReturn.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <p> Status: 404 </p>
-<p>- User does not exist </p>
+<p>- { message: "User does not exist" }</p>
 
 <br />
 
@@ -145,10 +145,11 @@
 <strong> Response: </strong>
 
 <p> Status: 204 </p>
+<p> - Nothing </p>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <br />
 
@@ -173,7 +174,7 @@
 <img src="./images/postCategoryReturn.png"/>
 
 <p> Status: 400 </p>
-<p>- Name is required </p>
+<p>- { message: "Name is required" }</p>
 
 <br />
 
@@ -195,8 +196,8 @@
 <img src="./images/getAllCategoriesReturn.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <br />
 
@@ -221,8 +222,8 @@
 <img src="./images/postPostReturn.png"/>
 
 <p> Status: 400 </p>
-<p>- Some required fields are missing</p>
-<p>- one or more categoryIds not found </p>
+<p>- { message: "Some required fields are missing" }</p>
+<p>- { message: "one or more categoryIds not found" }</p>
 
 <br />
 
@@ -244,8 +245,8 @@
 <img src="./images/getAllPostReturn.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <br />
 
@@ -265,11 +266,11 @@
 <img src="./images/getPostById.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <p> Status: 404 </p>
-<p>- Post does not exist </p>
+<p>- { message: "Post does not exist" }</p>
 
 <br />
 
@@ -290,8 +291,8 @@
 <img src="./images/getAllPostReturn.png"/>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
 
 <br />
 
@@ -315,12 +316,12 @@
 <img src="./images/putReturn.png"/>
 
 <p> Status: 400 </p>
-<p>- Some required fields are missing</p>
+<p>- { message: "Some required fields are missing" }</p>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
-<p> - Unauthorized user </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
+<p>- { message: "Unauthorized user" }</p>
 
 <br />
 
@@ -339,14 +340,15 @@
 <strong> Response: </strong>
 
 <p> Status: 204 </p>
+<p> - Nothing </p>
 
 <p> Status: 401 </p>
-<p>- Token not found </p>
-<p>- Expired or invalid token </p>
-<p> - Unauthorized user </p>
+<p>- { message: "Token not found" }</p>
+<p>- { message: "Expired or invalid token" }</p>
+<p>- { message: "Unauthorized user" }</p>
 
 <p> Status: 404 </p>
-<p>- Post does not exist </p>
+<p>- { message: "Post does not exist" }</p>
 
 <br />
 
